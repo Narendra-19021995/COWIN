@@ -1,0 +1,8 @@
+.menu{
+float:right;
+position:fixed;
+}
+.section{
+    height: 500px;
+    width: 100%;
+}

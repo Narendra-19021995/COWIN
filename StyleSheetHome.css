@@ -1,0 +1,379 @@
+﻿       @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #f2f2f2;
+}
+.nav{
+  background: #222;
+}
+.nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+.nav .logo{
+  float: left;
+  color: white;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 70px;
+  padding-left: 60px;
+}
+.nav ul{
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
+}
+.nav ul li {
+  float: left;
+  display: inline-block;
+  background: #222;
+  margin: 0 5px;
+}
+.nav ul li a{
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.nav ul li a:hover{
+  color: crimson;
+}
+.nav ul ul{
+  position: absolute;
+  top: 90px;
+  opacity: 0;
+  visibility: hidden;
+  transition: top .3s;
+}
+.nav ul li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 150px;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.nav ul ul li a{
+  line-height: 50px;
+}
+.nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 150px;
+}
+.show,.icon,.inputs{
+  display: none;
+}
+.fa-plus{
+  font-size: 15px;
+  margin-left: 40px;
+}
+@media all and (max-width: 968px) {
+  .nav ul{
+    margin-right: 0px;
+    float: left;
+  }
+  .nav .logo{
+    padding-left: 30px;
+    width: 100%;
+  }
+  .show + a, ul{
+    display: none;
+  }
+  .nav ul li,nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0 20px;
+    line-height: 70px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .show:hover{
+    color: crimson;
+  }
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 4.2%;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
+  .nav ul ul{
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav ul ul a{
+    padding-left: 40px;
+  }
+  .nav ul ul ul a{
+    padding-left: 80px;
+  }
+  .nav ul ul ul li{
+    position: static;
+  }
+  [id^=btn]:checked + ul{
+    display: block;
+  }
+  .nav ul ul li{
+    border-bottom: 0px;
+  }
+}
+
+/***Modal***/
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 46%;
+  padding: 10px;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/***Anker***/
+.anker
+{
+    text-decoration:none;
+    border: solid blue 1 px;
+    }
+    
+    /***Button***/
+    .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: blue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*****Login Head****/
+   * {
+  box-sizing: border-box;
+}
+
+input[type=text],[type=password], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float:left;
+}
+
+input[type=reset] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: left;
+  margin-left:1%;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=reset]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:50%;
+  margin:0 auto;
+}
+/**Form Control***/
+.container_1 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width:90%;
+  margin:0 auto;
+}
+
+.col-100{
+  width: 100%;
+  margin-top: 6px;
+ }
+ 
+ .col-33
+ {
+     float:left;
+     width:40%;
+     }
+     
+     .col-35
+     {
+         float:left;
+         width:40%;
+         }
+         .col-32
+         {
+             float:left;
+             width:20%;
+             }
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, .col-100, input[type=submit],[type=reset]{
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.heading
+{
+    font-family:Cambria;
+    font-size:xx-large;
+    font-style:normal;
+  }
+  /****Name Label****/
+  .name_label
+  {
+      margin-left:10%;
+      text-align:center;
+      background-color:transparent;
+      font-family:Cambria;
+      font-size:xx-large;
+      }
